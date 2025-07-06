@@ -1,9 +1,16 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { BookOpen, Users, Award, ArrowRight, Star } from "lucide-react";
+import { BookOpen, Users, Award, ArrowRight, Star, ExternalLink } from "lucide-react";
+import AuthDialog from "@/components/AuthDialog";
 
 const Home = () => {
+  const [authDialog, setAuthDialog] = useState<{ isOpen: boolean; defaultTab: "login" | "signup" }>({
+    isOpen: false,
+    defaultTab: "signup"
+  });
+
   const courses = [
     {
       title: "Web Development Mastery",
@@ -11,6 +18,7 @@ const Home = () => {
       students: 1250,
       rating: 4.9,
       price: "$99",
+      link: "https://teachable.com/course-link-1",
     },
     {
       title: "UI/UX Design Fundamentals",
@@ -18,6 +26,7 @@ const Home = () => {
       students: 890,
       rating: 4.8,
       price: "$79",
+      link: "https://teachable.com/course-link-2",
     },
     {
       title: "Digital Marketing Strategy",
@@ -25,6 +34,7 @@ const Home = () => {
       students: 670,
       rating: 4.7,
       price: "$89",
+      link: "https://teachable.com/course-link-3",
     },
   ];
 
@@ -47,53 +57,41 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-16 gradient-bg">
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 hero-gradient"></div>
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-foreground mb-6">
-              Learn. Grow. <span className="text-primary">Transform.</span>
+              Disconnect to <span className="text-primary">Connect.</span>
             </h1>
             <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Join thousands of students who have transformed their careers with my expertly crafted courses.
-              Start your journey today.
+              Join me to transform your vision
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="hover-lift text-lg px-8 py-3">
+              <Button 
+                size="lg" 
+                className="hover-lift text-lg px-8 py-3"
+                onClick={() => {
+                  const coursesSection = document.getElementById('courses-section');
+                  coursesSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 Explore Courses
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button variant="outline" size="lg" className="hover-lift text-lg px-8 py-3" asChild>
-                <Link to="/about">Learn About Me</Link>
+                <Link to="/about">Know About Me</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center hover-lift">
-              <div className="text-4xl font-medium text-foreground mb-2">5,000+</div>
-              <div className="text-muted-foreground">Students Taught</div>
-            </div>
-            <div className="text-center hover-lift">
-              <div className="text-4xl font-medium text-foreground mb-2">15+</div>
-              <div className="text-muted-foreground">Courses Created</div>
-            </div>
-            <div className="text-center hover-lift">
-              <div className="text-4xl font-medium text-foreground mb-2">4.8</div>
-              <div className="text-muted-foreground">Average Rating</div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Featured Courses */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="courses-section" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-medium tracking-tight text-foreground mb-4">
@@ -126,8 +124,12 @@ const Home = () => {
                       {course.rating}
                     </div>
                   </div>
-                  <Button className="w-full hover-lift">
+                  <Button 
+                    className="w-full hover-lift group"
+                    onClick={() => window.open(course.link, '_blank')}
+                  >
                     Enroll Now
+                    <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
                   </Button>
                 </CardContent>
               </Card>
@@ -178,11 +180,21 @@ const Home = () => {
           <p className="text-xl text-muted-foreground mb-8">
             Join thousands of students who have already transformed their careers
           </p>
-          <Button size="lg" className="hover-lift text-lg px-8 py-3" asChild>
-            <Link to="/contact">Get Started Today</Link>
+          <Button 
+            size="lg" 
+            className="hover-lift text-lg px-8 py-3"
+            onClick={() => setAuthDialog({ isOpen: true, defaultTab: "signup" })}
+          >
+            Get Started Today
           </Button>
         </div>
       </section>
+      
+      <AuthDialog 
+        isOpen={authDialog.isOpen}
+        onClose={() => setAuthDialog({ ...authDialog, isOpen: false })}
+        defaultTab={authDialog.defaultTab}
+      />
     </div>
   );
 };

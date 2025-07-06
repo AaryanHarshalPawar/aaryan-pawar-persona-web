@@ -1,18 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import AuthDialog from "./AuthDialog";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [authDialog, setAuthDialog] = useState<{ isOpen: boolean; defaultTab: "login" | "signup" }>({
+    isOpen: false,
+    defaultTab: "login"
+  });
   const location = useLocation();
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "About Me", path: "/about" },
-    { name: "Blog", path: "/blog" },
+    { name: "Know About Me", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
+
+  // Reset scroll position when route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -42,7 +51,21 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <Button className="hover-lift ml-4">Get Started</Button>
+            <div className="flex items-center space-x-3 ml-4">
+              <Button 
+                variant="outline" 
+                className="hover-lift"
+                onClick={() => setAuthDialog({ isOpen: true, defaultTab: "login" })}
+              >
+                Login
+              </Button>
+              <Button 
+                className="hover-lift"
+                onClick={() => setAuthDialog({ isOpen: true, defaultTab: "signup" })}
+              >
+                Get Started
+              </Button>
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -76,11 +99,36 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button className="hover-lift mt-4 w-fit">Get Started</Button>
+              <div className="flex flex-col space-y-3 mt-4">
+                <Button 
+                  variant="outline" 
+                  className="hover-lift w-fit"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setAuthDialog({ isOpen: true, defaultTab: "login" });
+                  }}
+                >
+                  Login
+                </Button>
+                <Button 
+                  className="hover-lift w-fit"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setAuthDialog({ isOpen: true, defaultTab: "signup" });
+                  }}
+                >
+                  Get Started
+                </Button>
+              </div>
             </div>
           </div>
         )}
       </div>
+      <AuthDialog 
+        isOpen={authDialog.isOpen}
+        onClose={() => setAuthDialog({ ...authDialog, isOpen: false })}
+        defaultTab={authDialog.defaultTab}
+      />
     </nav>
   );
 };
