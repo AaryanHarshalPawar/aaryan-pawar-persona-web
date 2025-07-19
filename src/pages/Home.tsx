@@ -1,9 +1,8 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { BookOpen, Users, Award, ArrowRight, Star, ExternalLink, Play, CheckCircle } from "lucide-react";
+import { BookOpen, Users, Award, ArrowRight, Star, ExternalLink } from "lucide-react";
 import AuthDialog from "@/components/AuthDialog";
 
 const Home = () => {
@@ -22,7 +21,7 @@ const Home = () => {
       link: "https://teachable.com/course-link-1",
     },
     {
-      title: "UI/UX Design Fundamentals", 
+      title: "UI/UX Design Fundamentals",
       description: "Master the principles of beautiful and functional design",
       students: 890,
       rating: 4.8,
@@ -39,13 +38,6 @@ const Home = () => {
     },
   ];
 
-  const achievements = [
-    "Helped 1000+ students transform their careers",
-    "Created 15+ comprehensive courses",
-    "4.8/5 average student rating",
-    "Featured in top design publications"
-  ];
-
   const testimonials = [
     {
       name: "Sarah Johnson",
@@ -53,109 +45,50 @@ const Home = () => {
       content: "Aaryan's courses completely transformed my career. The content is practical and easy to follow.",
     },
     {
-      name: "Michael Chen", 
+      name: "Michael Chen",
       role: "Designer",
       content: "The UI/UX course gave me the confidence to start my own design agency. Highly recommended!",
     },
     {
       name: "Emma Davis",
-      role: "Marketing Manager", 
+      role: "Marketing Manager",
       content: "Clear explanations and real-world examples. Best investment I've made in my professional development.",
     },
   ];
 
   return (
     <div className="min-h-screen pt-16 gradient-bg">
-      {/* Hero Section with Personal Introduction */}
+      {/* Hero Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 hero-gradient"></div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Text Content */}
-            <div className="text-left max-w-2xl">
-              <div className="mb-6">
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20 mb-4">
-                  <Play className="w-4 h-4 mr-2" />
-                  Course Creator & Designer
-                </span>
-              </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-foreground mb-6">
-                Hi, I'm <span className="text-primary">Aaryan Pawar</span>
-              </h1>
-              <p className="text-xl sm:text-2xl text-muted-foreground mb-8 leading-relaxed">
-                I help people <span className="text-foreground font-medium">disconnect from distractions</span> and 
-                <span className="text-foreground font-medium"> connect with their potential</span> through carefully crafted courses and design expertise.
-              </p>
-              
-              {/* Key Achievements */}
-              <div className="mb-8 space-y-3">
-                {achievements.map((achievement, index) => (
-                  <div key={index} className="flex items-center text-muted-foreground">
-                    <CheckCircle className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                    <span>{achievement}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
-                  className="hover-lift text-lg px-8 py-3"
-                  onClick={() => {
-                    const coursesSection = document.getElementById('courses-section');
-                    coursesSection?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  Explore My Courses
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button variant="outline" size="lg" className="hover-lift text-lg px-8 py-3" asChild>
-                  <Link to="/about">Know About Me</Link>
-                </Button>
-              </div>
-            </div>
-
-            {/* Right Side - Image */}
-            <div className="relative">
-              <div className="relative aspect-square max-w-md mx-auto lg:max-w-none">
-                {/* Decorative background elements */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl blur-3xl transform -rotate-6"></div>
-                <div className="absolute inset-0 bg-gradient-to-tl from-accent/30 to-transparent rounded-3xl blur-2xl transform rotate-3"></div>
-                
-                {/* Main image container */}
-                <div className="relative bg-card rounded-3xl p-2 calm-shadow-lg hover-lift">
-                  <div className="aspect-square rounded-2xl bg-gradient-to-br from-muted/50 to-muted/20 flex items-center justify-center text-muted-foreground">
-                    {/* Placeholder for your image */}
-                    <div className="text-center">
-                      <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                        <span className="text-4xl font-medium text-primary">AP</span>
-                      </div>
-                      <p className="text-sm">Your photo will go here</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating elements */}
-                <div className="absolute -top-4 -right-4 bg-card rounded-2xl p-4 calm-shadow hover-lift">
-                  <div className="flex items-center space-x-2">
-                    <Star className="w-5 h-5 text-yellow-500 fill-current" />
-                    <span className="font-medium text-foreground">4.8</span>
-                    <span className="text-sm text-muted-foreground">Rating</span>
-                  </div>
-                </div>
-
-                <div className="absolute -bottom-4 -left-4 bg-card rounded-2xl p-4 calm-shadow hover-lift">
-                  <div className="flex items-center space-x-2">
-                    <Users className="w-5 h-5 text-primary" />
-                    <span className="font-medium text-foreground">1000+</span>
-                    <span className="text-sm text-muted-foreground">Students</span>
-                  </div>
-                </div>
-              </div>
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-foreground mb-6">
+              Disconnect to <span className="text-primary">Connect.</span>
+            </h1>
+            <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Join me to transform your vision
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="hover-lift text-lg px-8 py-3"
+                onClick={() => {
+                  const coursesSection = document.getElementById('courses-section');
+                  coursesSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Explore Courses
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button variant="outline" size="lg" className="hover-lift text-lg px-8 py-3" asChild>
+                <Link to="/about">Know About Me</Link>
+              </Button>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Featured Courses */}
       <section id="courses-section" className="py-20 px-4 sm:px-6 lg:px-8">
@@ -245,7 +178,7 @@ const Home = () => {
             Ready to Start Your Journey?
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Join me to transform your vision
+            Join thousands of students who have already transformed their careers
           </p>
           <Button 
             size="lg" 
