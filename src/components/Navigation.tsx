@@ -1,11 +1,9 @@
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
 
   const navItems = [
     { name: "Courses", action: () => scrollToSection('courses-section') },
@@ -18,13 +16,6 @@ const Navigation = () => {
     section?.scrollIntoView({ behavior: 'smooth' });
     setIsMenuOpen(false);
   };
-
-  // Reset scroll position when route changes
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
-
-  const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
