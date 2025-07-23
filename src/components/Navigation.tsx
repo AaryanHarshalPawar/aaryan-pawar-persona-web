@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -6,9 +7,9 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Courses", action: () => scrollToSection('courses-section') },
-    { name: "About Me", action: () => scrollToSection('about-section') },
-    { name: "Contact", action: () => scrollToSection('contact-section') },
+    { name: "Programs", action: () => scrollToSection('courses-section') },
+    { name: "My Story", action: () => scrollToSection('about-section') },
+    { name: "Connect", action: () => scrollToSection('contact-section') },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -48,7 +49,7 @@ const Navigation = () => {
                 className="glow-button"
                 onClick={() => scrollToSection('contact-section')}
               >
-                Contact Me
+                Book a Session
               </Button>
             </div>
           </div>
@@ -85,7 +86,7 @@ const Navigation = () => {
                   className="glow-button w-fit"
                   onClick={() => scrollToSection('contact-section')}
                 >
-                  Contact Me
+                  Book a Session
                 </Button>
               </div>
             </div>

@@ -1,86 +1,87 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, Users, Award, ArrowRight, Star, ExternalLink, Mail, MapPin, Phone, Target, Heart, Lightbulb } from "lucide-react";
+import { Heart, Users, Award, ArrowRight, Star, ExternalLink, Mail, MapPin, Phone, Moon, Sun, Lotus, Brain, Leaf, Sparkles } from "lucide-react";
 
 const Index = () => {
   const courses = [
     {
-      title: "Web Development Mastery",
-      description: "Learn modern web development from basics to advanced concepts",
-      students: 1250,
+      title: "Deep Sleep Transformation",
+      description: "Master NSDR and Yoga Nidra techniques for profound rest and recovery",
+      students: 2150,
       rating: 4.9,
-      price: "$99",
-      link: "https://teachable.com/course-link-1",
+      price: "$89",
+      link: "https://course-platform.com/deep-sleep",
     },
     {
-      title: "UI/UX Design Fundamentals",
-      description: "Master the principles of beautiful and functional design",
-      students: 890,
+      title: "Mindfulness Meditation Mastery",
+      description: "Build a sustainable daily practice for inner peace and clarity",
+      students: 1890,
       rating: 4.8,
       price: "$79",
-      link: "https://teachable.com/course-link-2",
+      link: "https://course-platform.com/mindfulness",
     },
     {
-      title: "Digital Marketing Strategy",
-      description: "Build and grow your online presence effectively",
-      students: 670,
-      rating: 4.7,
-      price: "$89",
-      link: "https://teachable.com/course-link-3",
+      title: "Stress to Serenity Program",
+      description: "Transform anxiety and overwhelm into calm confidence",
+      students: 1270,
+      rating: 4.9,
+      price: "$99",
+      link: "https://course-platform.com/stress-relief",
     },
   ];
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "Frontend Developer",
-      content: "Aaryan's courses completely transformed my career. The content is practical and easy to follow.",
+      name: "Sarah Williams",
+      role: "Busy Mother & Entrepreneur",
+      content: "The sleep transformation course changed my life. I finally get deep, restorative sleep every night. My energy and mood have completely transformed.",
     },
     {
       name: "Michael Chen",
-      role: "Designer",
-      content: "The UI/UX course gave me the confidence to start my own design agency. Highly recommended!",
+      role: "Corporate Executive",
+      content: "Learning meditation with Aaryan helped me manage work stress and find inner peace. I'm more focused and present with my family now.",
     },
     {
-      name: "Emma Davis",
-      role: "Marketing Manager",
-      content: "Clear explanations and real-world examples. Best investment I've made in my professional development.",
+      name: "Emma Rodriguez",
+      role: "Wellness Seeker",
+      content: "The breathwork techniques have been life-changing. I feel more grounded, centered, and able to handle life's challenges with grace.",
     },
   ];
 
   const achievements = [
     {
       icon: <Users className="h-8 w-8 text-primary" />,
-      title: "5,000+ Students",
-      description: "Helped thousands of students achieve their career goals"
+      title: "8,000+ Lives Transformed",
+      description: "Guided thousands on their journey to inner peace and wellness"
     },
     {
-      icon: <BookOpen className="h-8 w-8 text-primary" />,
-      title: "15+ Courses",
-      description: "Created comprehensive courses across multiple disciplines"
+      icon: <Moon className="h-8 w-8 text-primary" />,
+      title: "50,000+ Hours",
+      description: "Of guided meditation and sleep sessions delivered"
     },
     {
       icon: <Award className="h-8 w-8 text-primary" />,
-      title: "Industry Expert",
-      description: "10+ years of experience in web development and design"
+      title: "Certified Wellness Guide",
+      description: "500-hour meditation teacher training and NSDR specialist"
     }
   ];
 
   const values = [
     {
-      icon: <Target className="h-6 w-6 text-primary" />,
-      title: "Excellence",
-      description: "Committed to delivering the highest quality educational content"
+      icon: <Lotus className="h-6 w-6 text-primary" />,
+      title: "Inner Peace",
+      description: "Helping you find stillness and calm in the midst of life's storms"
     },
     {
       icon: <Heart className="h-6 w-6 text-primary" />,
-      title: "Passion",
-      description: "Genuinely care about each student's success and growth"
+      title: "Authentic Living",
+      description: "Supporting your journey to live aligned with your true self"
     },
     {
-      icon: <Lightbulb className="h-6 w-6 text-primary" />,
-      title: "Innovation",
-      description: "Always exploring new ways to make learning more effective"
+      icon: <Leaf className="h-6 w-6 text-primary" />,
+      title: "Holistic Wellness",
+      description: "Nurturing mind, body, and spirit for complete well-being"
     }
   ];
 
@@ -89,19 +90,19 @@ const Index = () => {
       icon: <Mail className="h-6 w-6 text-primary" />,
       title: "Email",
       detail: "hello@aaryanpawar.com",
-      description: "Send me an email anytime"
+      description: "Reach out for guidance and support"
     },
     {
       icon: <Phone className="h-6 w-6 text-primary" />,
       title: "Phone",
       detail: "+1 (555) 123-4567",
-      description: "Mon-Fri from 9am to 6pm"
+      description: "Available for consultations"
     },
     {
       icon: <MapPin className="h-6 w-6 text-primary" />,
-      title: "Location",
-      detail: "San Francisco, CA",
-      description: "Available for remote work"
+      title: "Retreat Center",
+      detail: "Mindful Sanctuary, CA",
+      description: "In-person workshops available"
     }
   ];
 
@@ -114,10 +115,10 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-foreground mb-6">
-                Disconnect to <span className="text-primary">Connect.</span>
+                Disconnect to <span className="text-primary">Reconnect.</span>
               </h1>
               <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl">
-                Join me to transform your vision
+                Find inner peace through meditation, transform your sleep with NSDR, and awaken to your highest potential
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
@@ -128,7 +129,7 @@ const Index = () => {
                     coursesSection?.scrollIntoView({ behavior: 'smooth' });
                   }}
                 >
-                  Explore Courses
+                  Begin Your Journey
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button 
@@ -140,14 +141,14 @@ const Index = () => {
                     aboutSection?.scrollIntoView({ behavior: 'smooth' });
                   }}
                 >
-                  Know About Me
+                  My Story
                 </Button>
               </div>
             </div>
             <div className="flex justify-center">
               <div className="w-80 h-80 bg-gradient-to-br from-primary/10 to-primary/20 rounded-full flex items-center justify-center hover-lift border border-primary/20">
                 <div className="w-72 h-72 rounded-full bg-muted/50 flex items-center justify-center">
-                  <span className="text-2xl text-muted-foreground font-medium">Your Photo Here</span>
+                  <Lotus className="h-24 w-24 text-primary/60" />
                 </div>
               </div>
             </div>
@@ -155,15 +156,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Courses */}
+      {/* Featured Programs */}
       <section id="courses-section" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-medium tracking-tight text-foreground mb-4">
-              Featured Courses
+              Transformational Programs
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Carefully crafted courses designed to help you achieve your goals
+              Carefully designed journeys to help you find peace, improve sleep, and live with greater presence
             </p>
           </div>
 
@@ -172,7 +173,9 @@ const Index = () => {
               <Card key={index} className="hover-lift calm-shadow border-0 bg-card h-full flex flex-col">
                 <CardHeader className="flex-grow">
                   <div className="flex items-start justify-between mb-2">
-                    <BookOpen className="h-8 w-8 text-primary" />
+                    {index === 0 ? <Moon className="h-8 w-8 text-primary" /> : 
+                     index === 1 ? <Brain className="h-8 w-8 text-primary" /> : 
+                     <Sparkles className="h-8 w-8 text-primary" />}
                     <div className="text-2xl font-medium text-foreground">{course.price}</div>
                   </div>
                   <CardTitle className="text-xl">{course.title}</CardTitle>
@@ -182,7 +185,7 @@ const Index = () => {
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center text-sm text-muted-foreground">
                       <Users className="h-4 w-4 mr-1" />
-                      {course.students.toLocaleString()} students
+                      {course.students.toLocaleString()} participants
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
                       <Star className="h-4 w-4 mr-1 fill-current text-yellow-500" />
@@ -193,7 +196,7 @@ const Index = () => {
                     className="w-full glow-button group"
                     onClick={() => window.open(course.link, '_blank')}
                   >
-                    Enroll Now
+                    Join the Journey
                     <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
                   </Button>
                 </CardContent>
@@ -203,15 +206,76 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Free Resources Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-medium tracking-tight text-foreground mb-4">
+              Free Resources for Your Journey
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Start your transformation today with these complimentary guided experiences
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="hover-lift calm-shadow border-0 bg-card text-center">
+              <CardContent className="pt-8 pb-6">
+                <Moon className="h-12 w-12 text-primary mx-auto mb-4" />
+                <h3 className="text-lg font-medium text-foreground mb-2">
+                  20-Minute Sleep Story
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  A gentle guided journey into deep, restorative sleep
+                </p>
+                <Button variant="outline" className="glow-button">
+                  Listen Now
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover-lift calm-shadow border-0 bg-card text-center">
+              <CardContent className="pt-8 pb-6">
+                <Brain className="h-12 w-12 text-primary mx-auto mb-4" />
+                <h3 className="text-lg font-medium text-foreground mb-2">
+                  5-Minute Stress Relief
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Quick breathing technique to calm your nervous system
+                </p>
+                <Button variant="outline" className="glow-button">
+                  Try Now
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover-lift calm-shadow border-0 bg-card text-center">
+              <CardContent className="pt-8 pb-6">
+                <Sun className="h-12 w-12 text-primary mx-auto mb-4" />
+                <h3 className="text-lg font-medium text-foreground mb-2">
+                  Morning Meditation
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  Start your day with intention and peaceful presence
+                </p>
+                <Button variant="outline" className="glow-button">
+                  Begin
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* About Me Section */}
-      <section id="about-section" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section id="about-section" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-medium tracking-tight text-foreground mb-4">
               Hi, I'm <span className="text-primary">Aaryan Pawar</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A passionate educator and industry expert dedicated to helping others achieve their dreams through quality education.
+              A meditation teacher and wellness guide dedicated to helping others find inner peace, better sleep, and authentic living.
             </p>
           </div>
 
@@ -237,17 +301,17 @@ const Index = () => {
           {/* My Story */}
           <div className="max-w-4xl mx-auto mb-20">
             <h3 className="text-3xl font-medium tracking-tight text-foreground mb-8 text-center">
-              My Story
+              My Journey to Inner Peace
             </h3>
             <div className="space-y-6 text-lg text-muted-foreground">
               <p>
-                My journey began over 10 years ago when I wrote my first line of code. What started as curiosity quickly became a passion, and that passion eventually grew into a career spanning web development, UI/UX design, and digital marketing.
+                My journey began during a particularly stressful period in my corporate career when I was struggling with insomnia, anxiety, and a constant feeling of being disconnected from myself. That's when I discovered meditation and the transformative power of mindful living.
               </p>
               <p>
-                Throughout my career, I've had the opportunity to work on projects for companies ranging from innovative startups to established Fortune 500 corporations. Each project taught me something new and reinforced my belief that technology should serve people, not the other way around.
+                What started as a desperate attempt to find better sleep through NSDR (Non-Sleep Deep Rest) and Yoga Nidra practices became a profound spiritual awakening. I realized that the peace I was seeking wasn't somewhere out there—it was already within me, waiting to be uncovered.
               </p>
               <p>
-                Teaching wasn't originally part of my plan, but after mentoring junior developers and seeing their transformation, I realized I had found my true calling. There's nothing quite like the moment when a concept clicks for a student, or when they land their dream job using skills they learned in one of my courses.
+                Over the past 8 years, I've dedicated myself to studying ancient wisdom traditions, completing extensive meditation teacher training, and developing practices that work for our modern, busy lives. My mission is simple: to share these life-changing tools with anyone seeking greater peace, better sleep, and a deeper connection to their authentic self.
               </p>
             </div>
           </div>
@@ -274,14 +338,14 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-medium tracking-tight text-foreground mb-4">
-              What Students Say
+              Transformation Stories
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Real feedback from real students who transformed their careers
+              Real experiences from people who've found peace, better sleep, and deeper connection through these practices
             </p>
           </div>
 
@@ -307,14 +371,14 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact-section" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section id="contact-section" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-medium tracking-tight text-foreground mb-4">
-              Let's Start a <span className="text-primary">Conversation</span>
+              Let's Connect on Your <span className="text-primary">Wellness Journey</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Whether you have questions about my courses, need personalized guidance, or want to discuss collaboration opportunities, I'd love to hear from you.
+              Whether you have questions about meditation, need guidance on sleep practices, or want to explore working together, I'm here to support you.
             </p>
           </div>
 
@@ -342,23 +406,23 @@ const Index = () => {
           <Card className="hover-lift calm-shadow border-0 bg-card max-w-4xl mx-auto">
             <CardContent className="pt-6">
               <h3 className="text-lg font-medium text-foreground mb-4 text-center">
-                Connect on Social Media
+                Join the Mindful Community
               </h3>
               <p className="text-muted-foreground mb-6 text-center">
-                Follow me on social platforms for regular updates, tips, and behind-the-scenes content.
+                Follow along for daily inspiration, guided practices, and insights for mindful living.
               </p>
               <div className="flex flex-wrap gap-3 justify-center">
                 <Button variant="outline" className="glow-button">
-                  LinkedIn
-                </Button>
-                <Button variant="outline" className="glow-button">
-                  Twitter
+                  Instagram
                 </Button>
                 <Button variant="outline" className="glow-button">
                   YouTube
                 </Button>
                 <Button variant="outline" className="glow-button">
-                  Instagram
+                  Podcast
+                </Button>
+                <Button variant="outline" className="glow-button">
+                  Newsletter
                 </Button>
               </div>
             </CardContent>
