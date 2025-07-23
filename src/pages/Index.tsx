@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, Users, Award, ArrowRight, Star, ExternalLink, Mail, MapPin, Phone, Moon, Sun, Lotus, Brain, Leaf, Sparkles } from "lucide-react";
+import { Heart, Users, Award, ArrowRight, Star, ExternalLink, Mail, MapPin, Phone, Moon, Sun, Brain, Leaf, Sparkles, Flower2 } from "lucide-react";
 
 const Index = () => {
   const courses = [
@@ -69,7 +69,7 @@ const Index = () => {
 
   const values = [
     {
-      icon: <Lotus className="h-6 w-6 text-primary" />,
+      icon: <Flower2 className="h-6 w-6 text-primary" />,
       title: "Inner Peace",
       description: "Helping you find stillness and calm in the midst of life's storms"
     },
@@ -148,7 +148,7 @@ const Index = () => {
             <div className="flex justify-center">
               <div className="w-80 h-80 bg-gradient-to-br from-primary/10 to-primary/20 rounded-full flex items-center justify-center hover-lift border border-primary/20">
                 <div className="w-72 h-72 rounded-full bg-muted/50 flex items-center justify-center">
-                  <Lotus className="h-24 w-24 text-primary/60" />
+                  <Flower2 className="h-24 w-24 text-primary/60" />
                 </div>
               </div>
             </div>

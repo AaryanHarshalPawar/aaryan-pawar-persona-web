@@ -18,7 +18,7 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222 84% 20%;
 
-    --primary: 249 100% 69%;
+    --primary: 142 71% 45%;
     --primary-foreground: 0 0% 98%;
 
     --secondary: 210 40% 94%;
@@ -35,13 +35,15 @@ All colors MUST be HSL.
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 249 100% 69%;
-
+    --ring: 142 71% 45%;
+    
     --radius: 0.75rem;
     
-    /* Gradient colors */
-    --gradient-center: 249 100% 69%;
+    /* Wellness gradient colors */
+    --gradient-center: 142 71% 45%;
     --gradient-edge: 0 0% 98%;
+    --wellness-accent: 25 95% 53%;
+    --calm-blue: 200 50% 80%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -61,7 +63,7 @@ All colors MUST be HSL.
     --card-foreground: 222 84% 20%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 84% 20%;
-    --primary: 249 100% 69%;
+    --primary: 142 71% 45%;
     --primary-foreground: 0 0% 98%;
     --secondary: 210 40% 94%;
     --secondary-foreground: 222 84% 20%;
@@ -73,7 +75,7 @@ All colors MUST be HSL.
     --destructive-foreground: 0 0% 98%;
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 249 100% 69%;
+    --ring: 142 71% 45%;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -156,10 +158,25 @@ All colors MUST be HSL.
   }
 
   .gradient-bg {
-    background: radial-gradient(circle at center, hsl(var(--gradient-center) / 0.05) 0%, hsl(var(--gradient-edge)) 50%);
+    background: linear-gradient(135deg, 
+      hsl(var(--background)) 0%, 
+      hsl(var(--calm-blue) / 0.1) 25%,
+      hsl(var(--primary) / 0.05) 50%,
+      hsl(var(--muted)) 75%,
+      hsl(var(--background)) 100%);
   }
 
   .hero-gradient {
-    background: radial-gradient(ellipse at center, hsl(var(--primary) / 0.1) 0%, transparent 60%);
+    background: radial-gradient(ellipse at center, 
+      hsl(var(--primary) / 0.15) 0%, 
+      hsl(var(--calm-blue) / 0.08) 40%,
+      transparent 70%);
+  }
+
+  .meditation-glow {
+    background: radial-gradient(circle, 
+      hsl(var(--primary) / 0.1) 0%, 
+      hsl(var(--wellness-accent) / 0.05) 50%,
+      transparent 70%);
   }
 }
