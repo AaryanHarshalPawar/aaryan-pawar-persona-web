@@ -119,6 +119,9 @@ All colors MUST be HSL.
 
   .hover-lift {
     @apply transition-all duration-200 ease-out;
+    /* Add padding to prevent flickering on bottom edge */
+    padding-bottom: 2px;
+    margin-bottom: -2px;
   }
 
   .hover-lift:hover {
@@ -127,6 +130,9 @@ All colors MUST be HSL.
 
   .glow-button {
     @apply relative overflow-hidden transition-all duration-200 ease-out;
+    /* Add padding to prevent flickering on bottom edge */
+    padding-bottom: 2px;
+    margin-bottom: -2px;
   }
 
   .glow-button:hover {
